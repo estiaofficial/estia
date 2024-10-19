@@ -5,6 +5,7 @@ import http from 'http';
 import os from 'os';
 import cookieParser from 'cookie-parser';
 import l from './logger';
+import cors from 'cors';
 
 import installValidator from './swagger';
 
@@ -12,6 +13,7 @@ const app = express();
 
 export default class ExpressServer {
   private routes: (app: Application) => void;
+
   constructor() {
     const root = path.normalize(__dirname + '/../..');
     app.use(bodyParser.json({ limit: process.env.REQUEST_LIMIT || '100kb' }));
@@ -23,9 +25,16 @@ export default class ExpressServer {
     );
     app.use(bodyParser.text({ limit: process.env.REQUEST_LIMIT || '100kb' }));
     app.use(cookieParser(process.env.SESSION_SECRET));
-    
-    // Only use express.static in development
-    if (process.env.NODE_ENV !== 'production') {
+
+    // Apply CORS before any other middleware
+    if (process.env.NODE_ENV === 'production') {
+      app.use(cors({
+        origin: 'https://estiafrontend.vercel.app',
+        methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+        credentials: true,
+      }));
+    } else {
+      app.use(cors({ origin: '*' }));  // Open for all in development
       app.use(express.static(`${root}/public`));
     }
   }
@@ -35,7 +44,7 @@ export default class ExpressServer {
     return this;
   }
 
-  listen(port: number): Application {
+  listen(port: number = parseInt(process.env.PORT || '3000')): Application {
     const welcome = (p: number) => (): void =>
       l.info(
         `up and running in ${
@@ -46,10 +55,10 @@ export default class ExpressServer {
     installValidator(app, this.routes)
       .then(() => {
         if (process.env.NODE_ENV === 'production') {
-          // For Vercel, we don't need to create a server or listen on a port
+          // Vercel handles the server and port for production
           welcome(0)();
         } else {
-          // For development, create a server and listen on the specified port
+          // In development, we create and listen on the port
           http.createServer(app).listen(port, welcome(port));
         }
       })
