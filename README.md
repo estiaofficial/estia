@@ -11,7 +11,7 @@
     <br/>
     The Largest Coding Project Repository
     <br />
-    <a href="https://estia.ai"><strong>Explore the Website »</strong></a>
+    <a href="https://estiafrontend.vercel.app/"><strong>Explore the Website »</strong></a>
     <br />
     <br />
     <a href="https://github.com/yvjnlee/estia/issues">Report Bug</a>
