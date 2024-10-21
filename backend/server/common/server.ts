@@ -29,7 +29,7 @@ export default class ExpressServer {
     // Apply CORS before any other middleware
     if (process.env.NODE_ENV === 'production') {
       app.use(cors({
-        origin: 'https://estiafrontend.vercel.app',
+        origin: 'https://estiafrontend.vercel.app', // Specific frontend URL
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true,
       }));
@@ -37,6 +37,21 @@ export default class ExpressServer {
       app.use(cors({ origin: '*' }));  // Open for all in development
       app.use(express.static(`${root}/public`));
     }
+
+    // Add a route to serve the api.yml Swagger spec file
+    app.get('/api/v1/spec', (_, res) => {
+      // Ensure the correct path is served both locally and in production
+      const specPath = process.env.NODE_ENV === 'production'
+        ? path.join(__dirname, '../server/common/api.yml')
+        : path.join(__dirname, '../../server/common/api.yml');
+
+      // Log the path to verify on production
+      console.log('Serving Swagger spec from:', specPath);
+
+      // Apply CORS headers directly to the spec file response
+      res.header('Access-Control-Allow-Origin', 'https://estiafrontend.vercel.app');
+      res.sendFile(specPath);
+    });
   }
 
   router(routes: (app: Application) => void): ExpressServer {

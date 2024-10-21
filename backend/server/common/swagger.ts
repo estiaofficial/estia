@@ -10,9 +10,12 @@ export default function (
   return new Promise((resolve, reject) => {
     // Adjust the path for `api.yml` based on environment
     const apiSpecPath = process.env.NODE_ENV === 'production'
-      ? path.join(__dirname, './api.yml')  // Adjust if necessary for Vercel
-      : path.join(__dirname, 'api.yml');  // For local development
-    
+      ? path.join(__dirname, '../server/common/api.yml')
+      : path.join(__dirname, '../../server/common/api.yml');
+
+    // Log the resolved path to check if it works on Vercel
+    console.log('Resolved API spec path:', apiSpecPath);
+
     middleware(apiSpecPath, app, function (err: Error, middleware) {
       if (err) {
         return reject(err);
@@ -34,11 +37,11 @@ export default function (
         middleware.parseRequest({
           // Secure cookies using session secret
           cookie: {
-            secret: process.env.SESSION_SECRET || 'defaultSecret',  // Fallback for development
+            secret: process.env.SESSION_SECRET || 'defaultSecret',
           },
           // Limit JSON content size
           json: {
-            limit: process.env.REQUEST_LIMIT || '100kb',  // Fallback for size limit
+            limit: process.env.REQUEST_LIMIT || '100kb',
           },
         })
       );
