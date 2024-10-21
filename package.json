@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17"
+  }
+}
