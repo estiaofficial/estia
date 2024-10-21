@@ -6,9 +6,7 @@
       "use": "@vercel/node"
     }
   ],
-  "static": {
-    "public": "public"
-  },
+  "static": true,
   "rewrites": [
     {
       "source": "/(.*)",
