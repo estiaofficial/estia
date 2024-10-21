@@ -18,7 +18,7 @@ const doc = {
   paths: {},
 };
 
-const outputFile = './server/common/api.yml';
+const outputFile = './public/api-explorer/api.yml'
 const endpointsFiles = [path.join(__dirname, 'server/routes.ts')];
 
 // Generate Swagger documentation

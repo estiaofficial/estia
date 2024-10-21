@@ -11,7 +11,7 @@ export default function (
     // Adjust the path for `api.yml` based on environment
     const apiSpecPath = process.env.NODE_ENV === 'production'
       ? path.join(__dirname, '../server/common/api.yml')
-      : path.join(__dirname, '../../server/common/api.yml');
+      : path.join(__dirname, '../../public/api-explorer/api.yml');
 
     // Log the resolved path to check if it works on Vercel
     console.log('Resolved API spec path:', apiSpecPath);
