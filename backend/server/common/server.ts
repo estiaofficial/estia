@@ -42,7 +42,7 @@ export default class ExpressServer {
     app.get('/api/v1/spec', (_, res) => {
       // Ensure the correct path is served both locally and in production
       const specPath = process.env.NODE_ENV === 'production'
-        ? path.join(__dirname, '../server/common/api.yml')
+        ? path.join(__dirname, '../../public/api-explorer/api.yml')
         : path.join(__dirname, '../../public/api-explorer/api.yml');
 
       // Log the path to verify on production
