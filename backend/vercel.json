@@ -4,12 +4,20 @@
     {
       "src": "dist/index.js",
       "use": "@vercel/node"
+    },
+    {
+      "src": "public/api-explorer/api.yml",
+      "use": "@vercel/static"
     }
   ],
   "rewrites": [
     {
       "source": "/api/(.*)",
-      "destination": "dist/index.js"
+      "destination": "/dist/index.js"
+    },
+    {
+      "source": "/api/v1/spec",
+      "destination": "/public/api-explorer/api.yml"
     }
   ],
   "headers": [
