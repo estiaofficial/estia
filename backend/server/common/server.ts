@@ -30,7 +30,7 @@ export default class ExpressServer {
     const corsOptions = {
       origin: process.env.NODE_ENV === 'production'
         ? 'https://estiafrontend.vercel.app'
-        : ['https://estiafrontend.vercel.app', 'http://localhost:3000'],
+        : ['https://estiafrontend.vercel.app', 'http://localhost:8080'],
       credentials: true,
     };
     app.use(cors(corsOptions));

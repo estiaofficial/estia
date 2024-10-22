@@ -6,10 +6,9 @@
       "use": "@vercel/node"
     }
   ],
-  "public": true,
   "rewrites": [
     {
-      "source": "/(.*)",
+      "source": "/api/(.*)",
       "destination": "dist/index.js"
     }
   ],
