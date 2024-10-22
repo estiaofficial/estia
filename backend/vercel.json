@@ -10,10 +10,6 @@
     {
       "src": "/api/(.*)",
       "dest": "/dist/index.js"
-    },
-    {
-      "src": "/api/v1/spec",
-      "dest": "/public/api-explorer/api.yml"
     }
   ],
   "headers": [
