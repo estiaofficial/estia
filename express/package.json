@@ -11,9 +11,11 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
+		"@supabase/supabase-js": "^2.45.6",
 		"@vercel/postgres": "^0.7.2",
 		"dotenv": "^16.4.1",
-		"express": "^4.18.2"
+		"express": "^4.18.2",
+		"groq-sdk": "^0.7.0"
 	},
 	"devDependencies": {
 		"@types/express": "^5.0.0",

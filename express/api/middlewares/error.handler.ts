@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Response } from 'express';
 
 // Error handler to display the error as HTML
