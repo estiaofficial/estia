@@ -6,8 +6,7 @@ import os from 'os';
 import cookieParser from 'cookie-parser';
 import l from './logger';
 import cors from 'cors';
-
-import installValidator from './swagger';
+import routes from '../routes'; // Import your routes
 
 const app = express();
 
@@ -30,7 +29,7 @@ export default class ExpressServer {
     const corsOptions = {
       origin: process.env.NODE_ENV === 'production'
         ? 'https://estiafrontend.vercel.app'
-        : ['https://estiafrontend.vercel.app', 'http://localhost:8080'],
+        : ['https://estiafrontend.vercel.app', 'http://localhost:3000'],
       credentials: true,
     };
     app.use(cors(corsOptions));
@@ -39,7 +38,7 @@ export default class ExpressServer {
       app.use(express.static(`${root}/public`));
     }
 
-    // Add a route to serve the api.yml Swagger spec file
+    // Add a route to serve the api.yml Swagger spec file (if needed)
     app.get('/api/v1/spec', (_, res) => {
       const specPath = path.join(__dirname, '../../public/api-explorer/api.yml');
       console.log('Serving Swagger spec from:', specPath);
@@ -52,7 +51,7 @@ export default class ExpressServer {
     return this;
   }
 
-  listen(port: number = parseInt(process.env.PORT || '3000')): Application {
+  listen(port: number = parseInt(process.env.PORT || '8080')): Application {
     const welcome = (p: number) => (): void =>
       l.info(
         `up and running in ${
@@ -60,20 +59,14 @@ export default class ExpressServer {
         } @: ${os.hostname()}${p ? ` on port: ${p}` : ''}`
       );
 
-    installValidator(app, this.routes)
-      .then(() => {
-        if (process.env.NODE_ENV === 'production') {
-          // Vercel handles the server and port for production
-          welcome(0)();
-        } else {
-          // In development, we create and listen on the port
-          http.createServer(app).listen(port, welcome(port));
-        }
-      })
-      .catch((e) => {
-        l.error(e);
-        process.exit(1);
-      });
+    // Initialize your routes here
+    routes(app);
+
+    if (process.env.NODE_ENV === 'production') {
+      welcome(0)();
+    } else {
+      http.createServer(app).listen(port, welcome(port));
+    }
 
     return app;
   }
