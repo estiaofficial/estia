@@ -7,7 +7,7 @@
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "nodemon api/index.ts",
 		"build": "tsc",
-		"clean": "rimraf dist"
+		"clean": "tsc --build --clean"
 	},
 	"keywords": [],
 	"author": "",
