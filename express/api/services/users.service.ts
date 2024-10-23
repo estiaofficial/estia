@@ -1,6 +1,6 @@
 import L from '../../common/logger';
-import { User } from '../../../common/types';
-import { supabase } from '../../../common/clients';
+import { User } from '../../common/types';
+import { supabase } from '../../common/clients';
 
 export class UsersService {
   async create(user: User): Promise<User | null> {

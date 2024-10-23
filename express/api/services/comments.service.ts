@@ -1,6 +1,6 @@
 import L from '../../common/logger';
-import { Comment } from '../../../common/types';
-import { supabase } from '../../../common/clients';
+import { Comment } from '../../common/types';
+import { supabase } from '../../common/clients';
 
 export class CommentsService {
   async create(comment: Partial<Comment>): Promise<Comment | null> {

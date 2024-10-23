@@ -1,6 +1,6 @@
 import L from '../../common/logger';
-import { Comment, CommentDB, CommentInteraction, CommentInteractionDB } from '../../../common/types';
-import { supabase } from '../../../common/clients';
+import { Comment, CommentDB, CommentInteraction, CommentInteractionDB } from '../../common/types';
+import { supabase } from '../../common/clients';
 
 // creating a comment interaction, this will result in an update in comment table as well
 export class CommentInteractionsService {

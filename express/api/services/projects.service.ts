@@ -1,6 +1,6 @@
 import L from '../../common/logger';
-import { Project } from '../../../common/types';
-import { supabase } from '../../../common/clients';
+import { Project, ProjectDB } from '../../common/types';
+import { supabase } from '../../common/clients';
 
 export class ProjectsService {
   // Create
@@ -172,7 +172,7 @@ export class ProjectsService {
       }
 
       if (data) {
-        const projectIds = data.map((project) => project.project_id);
+        const projectIds = data.map((project: ProjectDB) => project.project_id);
         const { data: projectsData, error: projectsError } = await supabase
           .from('estia_projects')
           .select('*')
@@ -208,7 +208,7 @@ export class ProjectsService {
       }
 
       if (data) {
-        const projectIds = data.map((project) => project.project_id);
+        const projectIds = data.map((project: ProjectDB) => project.project_id);
         const { data: projectsData, error: projectsError } = await supabase
           .from('estia_projects')
           .select('*')
