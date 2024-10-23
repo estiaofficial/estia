@@ -1,14 +1,12 @@
 require('dotenv').config();
 
-const express = require('express');
+import express from 'express';
+import routes from './routes';
+
 const app = express();
 
-// Import routes
-import routes from "./routes";
-
-app.use(express.static('public'));
-
-// Use the imported routes
+// Middleware and routes
+app.use(express.json());
 routes(app);
 
 app.listen(process.env.PORT, () => console.log(`Server ready on port ${process.env.PORT}.`));
