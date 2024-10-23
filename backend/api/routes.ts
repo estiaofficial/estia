@@ -1,8 +1,8 @@
 import { Application } from 'express';
-import projectsRouter from '../../backend/server/api/controllers/projects/router';
-import usersRouter from '../../backend/server/api/controllers/users/router';
-import commentsRouter from '../../backend/server/api/controllers/comments/router';
-import commentInteractionsRouter from '../../backend/server/api/controllers/commentInteractions/router';
+import projectsRouter from './controllers/projects/router';
+import usersRouter from './controllers/users/router';
+import commentsRouter from './controllers/comments/router';
+import commentInteractionsRouter from './controllers/commentInteractions/router';
 
 export default function routes(app: Application): void {
   app.use('/api/v1/projects', projectsRouter);
