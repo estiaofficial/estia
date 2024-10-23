@@ -1,7 +1,7 @@
 import CommentInteractionsService from '../../services/commentInteractions.service';
 import { Request, Response } from 'express';
 import { RequestParams } from './types';
-import { CommentInteraction, CommentInteractionDB } from '../../../../common/types';
+import { CommentInteraction, CommentInteractionDB } from '../../../common/types';
 
 export class Controller {
   // Create

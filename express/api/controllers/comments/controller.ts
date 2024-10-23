@@ -1,4 +1,4 @@
-import CommentsService from '../../api/services/comments.service';
+import CommentsService from '../../../api/services/comments.service';
 import { Request, Response } from 'express';
 import { RequestParams } from './types';
 import { Comment } from '../../../common/types';

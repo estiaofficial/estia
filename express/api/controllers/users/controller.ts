@@ -1,4 +1,4 @@
-import UsersService from '../../api/services/users.service';
+import UsersService from '../../../api/services/users.service';
 import { Request, Response } from 'express';
 import { RequestParams } from './types';
 import { User } from '../../../common/types';

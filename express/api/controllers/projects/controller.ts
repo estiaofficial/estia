@@ -1,7 +1,7 @@
 import ProjectsService from '../../services/projects.service';
 import { Request, Response } from 'express';
 import { RequestParams } from './types';
-import { Project } from '../../../../common/types';
+import { Project } from '../../../common/types';
 
 export class Controller {
   // Create
