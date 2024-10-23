@@ -26,6 +26,6 @@
     "baseUrl": ".",
     "paths": {}
   },
-  "include": ["server/**/*.ts", "generate-swagger.ts"],
+  "include": ["server/**/*.ts", "generate-swagger.ts", "../express/api/routes.ts"],
   "exclude": ["node_modules"]
 }

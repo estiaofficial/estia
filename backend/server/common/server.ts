@@ -6,7 +6,7 @@ import os from 'os';
 import cookieParser from 'cookie-parser';
 import l from './logger';
 import cors from 'cors';
-import routes from '../routes'; // Import your routes
+import routes from '../../../express/api/routes'; // Import your routes
 
 const app = express();
 

@@ -1,6 +1,6 @@
 import './common/env';
 import Server from './common/server';
-import routes from './routes';
+import routes from '../../express/api/routes';
 import dotenv from 'dotenv';
 
 dotenv.config();
