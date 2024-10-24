@@ -60,8 +60,8 @@ export const LandingPage: React.FC = () => {
                         <div className="initial-heading-container">
                             <h3 className="initial-slogan">
                                 The world's largest
-                                <span className="highlight"> collection </span>
-                                of coding projects.
+                                <span className="initial-highlight"> collection </span>
+                                of coding projects
                             </h3>
                             <h2 className="initial-secondary-slogan">
                                 Whether you're a seasoned coder or just starting out,

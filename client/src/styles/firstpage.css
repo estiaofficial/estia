@@ -11,15 +11,24 @@
     /* Establishes positioning context */
 }
 
-.initial-title {
-    color: var(--white-in-dark-theme) !important;
-    font-size: var(--font-size-largest);
-    font-weight: 100;
-    display: flex;
-    letter-spacing: 6px;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 0px;
+@media (max-width: 768px) {
+    .initial-slogan {
+        font-size: var(--font-size-xxxl) !important;
+    }
+
+    .initial-secondary-slogan {
+        font-size: var(--font-size-md) !important;
+    }
+}
+
+@media (max-width: 468px) {
+    .initial-slogan {
+        font-size: var(--font-size-lg) !important;
+    }
+
+    .initial-secondary-slogan {
+        font-size: var(--font-size-xs) !important;
+    }
 }
 
 .initial-logo {
@@ -33,13 +42,11 @@
 
 .initial-slogan {
     color: var(--white-in-dark-theme) !important;
-    font-size: var(--font-size-xxxl);
-    font-weight: 600;
-    /* Heavier font weight */
-
+    font-size: var(--font-size-largest);
+    font-weight: 400;
     max-width: 70%;
     justify-content: center;
-    margin-top: 10rem;
+    margin-top: -12rem;
     text-align: center;
     /* Ensures text is centered */
     margin-bottom: 0;
@@ -52,33 +59,31 @@
     text-align: center;
     font-weight: 300;
     /* Heavier font weight */
-    line-height: 1.3; 
+    line-height: 1.3;
     margin-bottom: 4rem;
-
+    font-size: var(--font-size-lg);
 }
 
 .initial-heading-container {
     height: 90vh;
-    /* Full height of the viewport */
     display: flex;
-    /* Use flexbox */
     flex-direction: column;
-    /* Stack elements vertically */
     align-items: center;
-    /* Center horizontally */
     justify-content: center;
-    /* Center vertically */
     margin-bottom: 10rem;
-    /* Optional, adjust as needed */
 }
 
 .highlight {
     color: var(--accent-colour);
     display: inline;
-    /* Ensure it behaves like inline text */
-
 }
 
+.initial-highlight {
+    background: linear-gradient(50deg, #f702b1, #d63a8a 31.28%, #fd74bb 77.97%, #e78fbb 75.64%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline;
+}
 .initial-feedback {
     position: fixed;
     bottom: 0;
@@ -89,16 +94,27 @@
 
 .initial-button {
     padding: 25px 40px;
-    border-radius: 42px;
+    border-radius: 12px;
     cursor: pointer;
-     text-decoration: none; /* Removes the underline */
-    color: inherit; /* Ensures the color stays the same */
+    text-decoration: none;
+    color: inherit;
     border: none;
     width: 340px;
     height: 70px;
-    margin-bottom: 10px;
-    background-color: var(--white-in-dark-theme);
-    color: #2d2d2d !important;
+    margin-top: 2rem;
+    background: radial-gradient(231.94% 231.94% at 50% 100%, #AF0880 0%,
+            rgba(175, 8, 128, 0) 25.24%),
+        linear-gradient(180deg, #000000 0%, rgba(255, 238, 247, 0.04)),
+        rgba(255, 130, 200, 0.01);
+    box-shadow: 0 0 0 0 rgba(128, 0, 51, 0.4),
+        0 2px 5px 0 rgba(128, 0, 51, 0.39),
+        0 8px 8px 0 rgba(128, 0, 51, 0.34),
+        0 19px 11px 0 rgba(128, 0, 51, 0.2),
+        0 34px 14px 0 rgba(128, 0, 51, 0.06),
+        0 53px 15px 0 rgba(128, 0, 51, 0.01),
+        inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08),
+        inset 0 -8px 32px 0 #4e0136;
+    color: white !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -132,7 +148,7 @@
 }
 
 .initial-button:hover {
-    background-color: rgb(148, 148, 148) !important;
+    background-color: #AF0880;
     z-index: 1;
 }
 
@@ -145,59 +161,65 @@
 .video-container {
     position: relative;
     width: 100%;
-    max-width: 1800px; /* Set max-width as needed */
+    max-width: 2300px;
+    /* Set max-width as needed */
     overflow: hidden;
-    border-radius: 15px; /* Rounded borders */
-  }
-  
-  /* Style for the video itself */
-  .video-container video {
+    border-radius: 15px;
+    margin-top: -10rem;
+}
+
+/* Style for the video itself */
+.video-container video {
     width: 100%;
     height: auto;
     display: block;
-    border-radius: 15px; /* Match the container's border-radius */
-  }
-  
-  /* Style for the play button overlay */
-  .play-button {
+    border-radius: 15px;
+    /* Match the container's border-radius */
+}
+
+/* Style for the play button overlay */
+.play-button {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 70px;
     height: 70px;
-    background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent background */
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Semi-transparent background */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
     transition: background-color 0.3s;
-  }
-  
-  .play-button:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Darken on hover */
-  }
-  
-  /* Play button icon */
-  .play-button::before {
+}
+
+.play-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Darken on hover */
+}
+
+/* Play button icon */
+.play-button::before {
     content: "";
     border-style: solid;
     border-width: 15px 0 15px 25px;
     border-color: transparent transparent transparent white;
     display: inline-block;
-  }
-  
-  /* Optional cropping of the video */
-  .video-container video {
-    object-fit: cover; /* Crop the video to fill the container */
-  }
-  
+}
+
+/* Optional cropping of the video */
+.video-container video {
+    object-fit: cover;
+    /* Crop the video to fill the container */
+}
+
 
 .landing-subheading {
     font-size: var(--font-size-xl);
     margin-bottom: 0;
-    margin-top: 10rem;
+    margin-top: 30rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -234,7 +256,7 @@
     font-weight: 400;
     margin-bottom: 4rem;
     font-size: var(--font-size-md);
-    line-height: 1.6; 
+    line-height: 1.6;
 }
 
 .contact-tag {
@@ -255,7 +277,7 @@
     padding: 2rem 0;
     margin-top: 4rem;
     font-size: var(--font-size-sm);
-    border-top: 4px solid #272a39; 
+    border-top: 4px solid #272a39;
 }
 
 .footer a {
