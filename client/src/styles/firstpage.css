@@ -118,6 +118,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background-color 0.5s ease;
     font-weight: 500;
     font-size: var(--font-size-md);
     text-align: center;
@@ -126,18 +127,30 @@
 
 .star-button {
     padding: 25px 40px;
-    border-radius: 42px;
+    border-radius: 12px;
     cursor: pointer;
     border: none;
     width: 450px;
     height: 90px;
     margin-bottom: 10px;
-    background-color: var(--accent-colour);
-    color: var(--white-in-dark-theme) !important;
+    background: radial-gradient(231.94% 231.94% at 50% 100%, #AF0880 0%,
+            rgba(175, 8, 128, 0) 25.24%),
+        linear-gradient(180deg, #000000 0%, rgba(255, 238, 247, 0.04)),
+        rgba(255, 130, 200, 0.01);
+    box-shadow: 0 0 0 0 rgba(128, 0, 51, 0.4),
+        0 2px 5px 0 rgba(128, 0, 51, 0.39),
+        0 8px 8px 0 rgba(128, 0, 51, 0.34),
+        0 19px 11px 0 rgba(128, 0, 51, 0.2),
+        0 34px 14px 0 rgba(128, 0, 51, 0.06),
+        0 53px 15px 0 rgba(128, 0, 51, 0.01),
+        inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08),
+        inset 0 -8px 32px 0 #4e0136;
+    color: white !important;
     display: flex;
     align-items: center;
     justify-content: center;
     font-weight: 500;
+    transition: background-color 0.5s ease;
     font-size: var(--font-size-md);
     text-align: center;
 }
@@ -219,7 +232,7 @@
 .landing-subheading {
     font-size: var(--font-size-xl);
     margin-bottom: 0;
-    margin-top: 2rem;
+    margin-top: 25rem;
     display: flex;
     justify-content: center;
     align-items: center;

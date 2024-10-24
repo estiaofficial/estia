@@ -61,8 +61,9 @@ export const LocomotiveScrollBar: React.FC = () => {
         <div className="scroller" data-speed="slow">
             <ul className="tag-list scroller__inner">
                 <li>Backend Programming</li>
-                <li>Angular</li>
-                <li>TypeScript</li>
+                <li>Frameworks</li>
+                <li>DevOps</li>
+                <li>Languages</li>
                 <li>Databases</li>
                 <li>Game Development</li>
                 <li>Hosting</li>

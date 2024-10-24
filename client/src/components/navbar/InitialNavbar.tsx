@@ -29,7 +29,7 @@ export const InitialNavbar: React.FC = () => {
     }, []);
 
     return (
-        <nav className="nav-bar" data-scroll-section>
+        <nav className="nav-bar start" data-scroll-section>
             <Link to="/">
                 <img className="logo" src={EstiaLogo} alt="Estia Logo" />
             </Link>

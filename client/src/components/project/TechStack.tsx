@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import TechStackModal from "./TechStackModal";
 
+
+// Programming Logos
 import cSharp from "../../img/programminglogos/c#.svg";
 import css from "../../img/programminglogos/css.svg";
 import cPlusPlus from "../../img/programminglogos/c++.svg";
@@ -16,8 +18,10 @@ import kotlin from "../../img/programminglogos/kotlin.svg";
 import php from "../../img/programminglogos/php.png"; // Note: Different format (png)
 import python from "../../img/programminglogos/python.svg";
 import ruby from "../../img/programminglogos/ruby.svg";
+import swift from "../../img/programminglogos/swift.svg"
 import typescript from "../../img/programminglogos/typescript.svg";
 
+// Frameworks
 import android from "../../img/frameworkslogos/android.svg";
 import angular from "../../img/frameworkslogos/angular.svg";
 import bootstrap from "../../img/frameworkslogos/boostrap.svg"; // Note: Correct spelling
@@ -39,18 +43,25 @@ import react from "../../img/frameworkslogos/react.svg";
 import reactnative from "../../img/frameworkslogos/reactnative.svg";
 import redux from "../../img/frameworkslogos/redux.svg";
 import spring from "../../img/frameworkslogos/spring.svg";
-import scss from "../../img/frameworkslogos/scss.png"
+import scss from "../../img/frameworkslogos/scss.png";
+import scikitlearn from "../../img/frameworkslogos/scikit-learn.svg";
 import tailwindcss from "../../img/frameworkslogos/tailwindcss.svg";
+import threejs from "../../img/frameworkslogos/threejs.svg";
 import tensorflow from "../../img/frameworkslogos/tensorflow.svg";
-
 import vuejs from "../../img/frameworkslogos/vuejs.svg";
 
+
+// Databases
 import cassandra from "../../img/databaselogos/cassandra.svg";
 import mongodb from "../../img/databaselogos/mongodb.svg";
 import mysql from "../../img/databaselogos/mysql.svg";
 import oracle from "../../img/databaselogos/oracle.svg";
 import postgresql from "../../img/databaselogos/postgresql.svg";
 import redis from "../../img/databaselogos/redis.svg";
+
+// DevOps
+import docker from "../../img/devopslogos/docker.svg"
+import jenkins from "../../img/devopslogos/jenkins.svg"
 
 // Mapping tech names to their corresponding images
 const techImages: { [key: string]: string } = {
@@ -70,6 +81,7 @@ const techImages: { [key: string]: string } = {
     php,
     python,
     ruby,
+    swift,
     typescript,
     // Frameworks
     android,
@@ -93,9 +105,11 @@ const techImages: { [key: string]: string } = {
     reactnative,
     redux,
     scss,
+    scikitlearn,
     spring,
     tailwindcss,
     tensorflow,
+    threejs,
     vuejs,
     // Databases
     cassandra,
@@ -104,6 +118,9 @@ const techImages: { [key: string]: string } = {
     oracle,
     postgresql,
     redis,
+    //DevOps
+    docker,
+    jenkins,
 };
 
 const TechStack: React.FC<{ tech1: string; tech2: string }> = ({ tech1, tech2 }) => {

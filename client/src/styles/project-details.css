@@ -120,7 +120,7 @@
     padding: 0.5rem 2rem;
     margin-top: 1.25rem;
     align-items: center;
-    border-radius: 8px;
+    border-radius: 4px;
     justify-content: center;
     font-size: var(--font-size-sm);
 }

@@ -4,6 +4,8 @@
     "react-scripts": "^5.0.1"
   },
   "devDependencies": {
+    "@craco/craco": "^7.1.0",
+    "@svgr/webpack": "^8.1.0",
     "@types/cors": "^2.8.17"
   }
 }
