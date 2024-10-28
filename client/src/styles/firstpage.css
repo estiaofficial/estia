@@ -114,6 +114,7 @@
         0 53px 15px 0 rgba(128, 0, 51, 0.01),
         inset 0 0 12px 0 hsla(0, 0%, 100%, 0.08),
         inset 0 -8px 32px 0 #4e0136;
+        border: 1px solid #AF0880;
     color: white !important;
     display: flex;
     align-items: center;
@@ -132,6 +133,7 @@
     border: none;
     width: 450px;
     height: 90px;
+    border: 1px solid #AF0880;
     margin-bottom: 10px;
     background: radial-gradient(231.94% 231.94% at 50% 100%, #AF0880 0%,
             rgba(175, 8, 128, 0) 25.24%),

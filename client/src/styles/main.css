@@ -77,18 +77,25 @@
     background-color: var(--background-color);
 }
 
+.nav-gradient-line {
+    position: absolute;
+    inset-inline: 0; 
+    margin-top: 7rem;
+    height: 1px; 
+    background: linear-gradient(to right, transparent, #6a6a6a, transparent); /* Equivalent to bg-gradient-to-r from-transparent via-med-grey to-transparent */
+  }
+
 .nav-bar.start {
     position: static;
-    padding: 1rem;
-    margin-top: 0.5rem;
+    padding: 8px !important;
     display: flex;
     margin-left: 4rem;
     margin-right: 4rem;
+    margin-top: 0 !important;
     top: 28px;
+    border: none;
     align-items: center;
-    border-radius: 12px;
     z-index: 8;
-    border: 2px solid rgb(56, 56, 56);
     justify-content: space-between;
     align-items: center;
     background-color: var(--background-color);

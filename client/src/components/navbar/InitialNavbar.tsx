@@ -54,6 +54,7 @@ export const InitialNavbar: React.FC = () => {
                 <GithubButton />
                 <LogInButton />
             </div>
+            <div className="nav-gradient-line"></div>
         </nav>
     );
 };
