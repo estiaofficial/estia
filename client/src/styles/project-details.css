@@ -253,31 +253,6 @@
     margin-bottom: 2rem;
 }
 
-.github-container:hover {
-    background-color: var(--blue-grey-hover);
-    transform: scale(1.01);
-}
-
-.github-container .tooltip {
-    display: none;
-    position: absolute;
-    bottom: 100%;
-    /* Position above the container */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--black);
-    color: var(--white-in-dark-theme);
-    padding: 0.5rem;
-    border-radius: 4px;
-    white-space: nowrap;
-    /* Prevent text wrapping */
-    font-size: var(--font-size-xs);
-    z-index: 10;
-}
-
-.github-container:hover .tooltip {
-    display: block;
-}
 
 .github-name-and-logo {
     display: flex;
@@ -362,6 +337,37 @@
 .save-and-like-button.saved .project-details-button-text {
     color: white; /* Text color for the 'saved' state */
 }
+
+
+.github-button {
+    display: flex;
+    flex-direction: row;
+    font-size: var(--font-size-sm);
+    background-color: var(--background-color);
+    align-items: center;
+    margin-right: 2rem;
+    padding: 1rem;
+    margin-top: 3rem;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: transform 10s ease;
+    transition: background-color 0.3s ease;
+}
+
+.github-button:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+a.github-link {
+    text-decoration: none; 
+}
+
+.github-link a, .github-button {
+    text-decoration: none;
+}
+
+
 
 .like-fav-icon {
     width: 20px;

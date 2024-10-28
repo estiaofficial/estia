@@ -47,16 +47,13 @@ const GitHubRepo: React.FC<GitHubRepoProps> = ({ repoPath }) => {
     }
 
     return (
-        <a
-            href={`https://github.com/${repoPath}`}
-            target="_blank"
-            rel="noopener noreferrer"
+        <div
             className="github-container"
         >
             <div>
                 <div className="github-name-and-logo">
                 <img className="github-logo" src={GithubLogo} alt="GitHub Logo" />
-                <h1 className="github-title">Github Repo</h1>
+                <h1 className="github-title">Github</h1>
                 </div>
                 <h2 className="github-name">{repoData.full_name}</h2>
                 <p className="github-description">
@@ -75,9 +72,21 @@ const GitHubRepo: React.FC<GitHubRepoProps> = ({ repoPath }) => {
                         🐛 Open Issues: {repoData.open_issues_count}
                     </p>
                 </div>
-                <div className="tooltip">Open link on GitHub</div>
+                <div className="github-link">
+                    <a                      
+                    href={`https://github.com/${repoPath}`}
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="gituhb-link"
+                    >
+                    <button 
+                    className="github-button">
+                        Check it out
+                    </button>
+                    </a>
+                </div>
             </div>
-        </a>
+        </div>
     );
 };
 
