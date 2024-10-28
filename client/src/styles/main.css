@@ -79,10 +79,10 @@
 
 .nav-gradient-line {
     position: absolute;
-    inset-inline: 0; 
+    inset-inline: 9%; 
     margin-top: 7rem;
     height: 1px; 
-    background: linear-gradient(to right, transparent, #6a6a6a, transparent); /* Equivalent to bg-gradient-to-r from-transparent via-med-grey to-transparent */
+    background: linear-gradient(to right, transparent, #6a6a6a, transparent);
   }
 
 .nav-bar.start {
@@ -320,7 +320,7 @@
     flex-wrap: wrap;
     /* Allow cards to wrap to the next line */
     width: 96%;
-    margin-top: 30rem;
+    margin-top: 8rem;
     justify-content: space-between;
 }
 
@@ -358,12 +358,17 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+}
+
+.feature-header {
+    display: flex;
     align-items: center;
-    /* Center items horizontally */
+    margin-left: 2rem;
 }
 
 .svg-container {
-    margin-bottom: 1rem;
+    margin-right: 2rem;
+    margin-left: 0;
 }
 
 .feature-text {
@@ -373,6 +378,7 @@
 
 .feature-description {
     font-size: var(--font-size-sm);
-    text-align: center;
+    text-align: left;
     width: 80%;
+    margin-left: 2rem;
 }

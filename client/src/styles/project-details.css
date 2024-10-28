@@ -239,9 +239,10 @@
 .github-container {
     display: flex;
     padding: 2rem;
-    background-color: var(--blue-grey);
-    width: 26rem;
+    background-color: none;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
+    width: 26rem;
     text-decoration: none;
     /* Remove underline from the link */
     color: inherit;
@@ -264,10 +265,10 @@
     /* Position above the container */
     left: 50%;
     transform: translateX(-50%);
-    background-color: #333;
+    background-color: var(--black);
     color: var(--white-in-dark-theme);
     padding: 0.5rem;
-    border-radius: 5px;
+    border-radius: 4px;
     white-space: nowrap;
     /* Prevent text wrapping */
     font-size: var(--font-size-xs);
@@ -278,9 +279,15 @@
     display: block;
 }
 
+.github-name-and-logo {
+    display: flex;
+    align-items: center;
+}
+
 .github-logo {
     height: 4rem;
     width: auto;
+    margin-left: -0.8rem;
 }
 
 .github-name {

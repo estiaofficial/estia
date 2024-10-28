@@ -14,6 +14,7 @@ import { FeatureList } from "../components/landingpage/FeatureList";
 
 import PrototypeImage from "../img/prototype.svg";
 import EstiaVideo from "../videos/EstiaDemo.mp4";
+import backgroundstars from "../img/background.svg"
 
 import { FadeInSection } from "../components/FadeInSection";
 
@@ -24,8 +25,22 @@ export const LandingPage: React.FC = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const handlePlay = () => {
-        setIsPlaying(true);
-        videoRef.current?.play();
+        if (videoRef.current) {
+            // Request fullscreen mode first
+            const videoElement = videoRef.current;
+            if (videoElement.requestFullscreen) {
+                videoElement.requestFullscreen().then(() => {
+                    videoElement.play(); // Play the video after entering fullscreen
+                    setIsPlaying(true);
+                }).catch((err) => {
+                    console.error("Fullscreen request failed:", err);
+                });
+            } else {
+                // Fallback if requestFullscreen is not supported
+                videoElement.play();
+                setIsPlaying(true);
+            }
+        }
     };
 
     const handlePause = () => {
@@ -53,6 +68,7 @@ export const LandingPage: React.FC = () => {
 
     return (
         <div className="landing-page-wrapper">
+            <div className="background-stars"></div>
             <div>
                 <InitialNavbar />
                 <div className="wrapper">
@@ -65,7 +81,7 @@ export const LandingPage: React.FC = () => {
                             </h3>
                             <h2 className="initial-secondary-slogan">
                                 Whether you're a seasoned coder or just starting out,
-                                our knowledge bank is here to transform your coding journey.
+                                our personalized knowledge bank is here to change how you learn.
                             </h2>
                             <Link to="/login" style={{ textDecoration: "none" }}>
                                 <button className="initial-button">
@@ -93,8 +109,9 @@ export const LandingPage: React.FC = () => {
                         </FadeInSection>
                         <FadeInSection>
                             <FeatureList />
-                        </FadeInSection>
+                        </FadeInSection>           
                         <FadeInSection>
+                        <div className="background-stars"></div>
                             <div className="contribution-container">
                                 <h2 className="landing-subheading">
                                     Interested in Contributing?
