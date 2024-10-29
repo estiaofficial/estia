@@ -152,13 +152,25 @@ const TechStack: React.FC<{ tech1: string; tech2: string }> = ({ tech1, tech2 })
             <h1>Tech Stack</h1>
             <p className="tech-stack-subtitle">Select one for additional generated info</p>
             <div className="tech-images-div-container">
-                <div className="tech-images-div" onClick={() => handleTechClick(tech1)}>
-                    <img src={getTechImage(tech1)} alt={tech1} className="tech-image" />
-                    <p className="tech-stack-details">{tech1}</p>
+                <div className="tech-images-div">
+                    <div className="tech-name-image-div">
+                        <img src={getTechImage(tech1)} alt={tech1} className="tech-image" />
+                        <p className="tech-stack-details">{tech1}</p>
+                    </div>
+                    <button className="tech-stack-button"
+                        onClick={() => handleTechClick(tech1)}>
+                        Learn more
+                    </button>
                 </div>
-                <div className="tech-images-div" onClick={() => handleTechClick(tech2)}>
-                    <img src={getTechImage(tech2)} alt={tech2} className="tech-image" />
-                    <p className="tech-stack-details">{tech2}</p>
+                <div className="tech-images-div">
+                    <div className="tech-name-image-div">
+                        <img src={getTechImage(tech2)} alt={tech2} className="tech-image" />
+                        <p className="tech-stack-details">{tech2}</p>
+                    </div>
+                    <button className="tech-stack-button"
+                        onClick={() => handleTechClick(tech2)}>
+                        Learn more
+                    </button>
                 </div>
             </div>
             {isModalOpen && (

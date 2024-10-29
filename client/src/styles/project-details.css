@@ -35,37 +35,52 @@
     text-align: center;
 }
 
-.tech-images-div-container {
+
+.tech-stack-button {
+    font-size: var(--font-size-sm);
+    background-color: var(--background-color);
+    color: var(--text-color); /* Replace with your color variable */
+    align-items: center;
+    padding: 1rem 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevents text from wrapping to a new line */
+    width: 160px; /* Fixed width to fit "Learn More" without line breaks */
+    text-align: center;
+}
+
+.tech-stack-button:hover {
+    filter: brightness(1.2);
+    cursor: pointer;
+}
+
+.tech-name-image-div {
     display: flex;
-    justify-content: space-between;
-    /* Space between the tech items */
-    gap: 20px;
-    /* Optional: add some space between each tech div */
-    margin-left: 50px;
-    margin-right: 50px;
+    align-items: center;
 }
 
 .tech-images-div {
     display: flex;
-    flex-direction: column;
-    /* Stack image and text vertically */
     align-items: center;
-    /* Center them horizontally */
-    justify-content: center;
-    cursor: pointer;
+    margin-top: 1rem;
+    justify-content: space-between; /* Ensures button stays at the right end */
 }
 
-.tech-images-div:hover {
-    transform: scale(1.15);
+.tech-images-div:nth-child(1) {
+    margin-bottom: 2rem;
 }
+
 
 .tech-image {
-    width: 80px;
+    width: 40px;
+    margin-right: 1rem;
 }
 
 .tech-stack-details {
-    margin-top: 10px;
-    /* Optional: Add some space between image and text */
+ 
+    font-size: var(--font-size-sm);
     text-align: center;
     /* Center the text */
 }

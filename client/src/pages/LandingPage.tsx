@@ -107,9 +107,7 @@ export const LandingPage: React.FC = () => {
                             </h2>
                             <LocomotiveScrollBar />
                         </FadeInSection>
-                        <FadeInSection>
                             <FeatureList />
-                        </FadeInSection>           
                         <FadeInSection>
                         <div className="background-stars"></div>
                             <div className="contribution-container">

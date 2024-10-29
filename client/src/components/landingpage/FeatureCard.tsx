@@ -21,13 +21,14 @@ export const FeatureCard: React.FC<FeatureCardProps> = ({ feature }) => {
         justifyContent: "flex-start",
         alignItems: "left",
         transition: "transform 0.3s ease, filter 0.3s ease",
+        boxShadow: "inset 0 2px 5px rgba(0, 0, 0, 0.5)" 
     };
 
     return (
         <div className="feature-container" style={containerStyle}>
             <div className="feature-header">
             <div className="svg-container">
-                <SvgIcon height="60px" width="60px" /> {/* Render the SVG as a component */}
+                <SvgIcon height="40px" width="40px" /> {/* Render the SVG as a component */}
             </div>
             <h2 className="feature-text">{featureHeading}</h2>
             </div>
