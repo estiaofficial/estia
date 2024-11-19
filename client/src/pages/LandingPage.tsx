@@ -101,15 +101,17 @@ export const LandingPage: React.FC = () => {
                                 <div className="play-button" onClick={handlePlay}></div>
                             )}
                         </div>
-                        <FadeInSection>
+                        <div className="landing-scrollbar">
                             <h2 className="landing-subheading">
                                 Develop Any Skill You Can Imagine
                             </h2>
-                            <LocomotiveScrollBar />
-                        </FadeInSection>
+                            <div className="feature-list-container">
+                                <LocomotiveScrollBar />
+                            </div>
                             <FeatureList />
+                        </div>
                         <FadeInSection>
-                        <div className="background-stars"></div>
+                            <div className="background-stars"></div>
                             <div className="contribution-container">
                                 <h2 className="landing-subheading">
                                     Interested in Contributing?

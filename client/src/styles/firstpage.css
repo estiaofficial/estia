@@ -33,6 +33,30 @@
     .initial-secondary-slogan {
         font-size: var(--font-size-sm) !important;
     }
+
+    .landing-subheading{
+        font-size: var(--font-size-lg) !important;
+
+    }
+
+    .contribution-header{
+        font-size: var(--font-size-sm) !important;
+    }
+}
+
+
+
+.landing-scrollbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Centers vertically */
+    align-items: center; /* Centers horizontally */
+    width: 100%; /* Full-width container */
+    min-height: 80vh; /* Adjust height to center content properly */
+    padding: 20px;
+    margin: auto;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .initial-logo {
@@ -185,8 +209,6 @@
     border-radius: 15px;
     margin-top: -10rem;
     padding: 4px; /* Add some padding for better visibility */
-    border-color: #af0880;
-    box-shadow: 0 0 10px 5px rgba(175, 8, 128, 0.5);
 }
 
 .background-stars {

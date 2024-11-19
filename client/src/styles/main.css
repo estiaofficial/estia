@@ -60,6 +60,12 @@
     color: var(--white-in-dark-theme);
 }
 
+@media (max-width: 468px) {
+    .main-h2 {
+        font-size: var(--font-size-xl) !important;
+    }
+}
+
 .nav-bar {
     position: sticky;
     padding: 1rem;
@@ -319,7 +325,7 @@
     display: flex;
     flex-wrap: wrap;
     /* Allow cards to wrap to the next line */
-    width: 85%;
+    width: 87%;
     margin-top: 8rem;
     justify-content: space-between;
 }
