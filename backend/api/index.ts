@@ -9,7 +9,8 @@ const app = express();
 // CORS configuration
 const allowedOrigins = [
   'http://localhost:3000', // Local development
-  'https://estiafrontend.vercel.app' // Production frontend
+  'https://estiafrontend.vercel.app', // Production frontend
+  'https://estiaprojects.vercel.app'
 ];
 
 app.use(cors({
