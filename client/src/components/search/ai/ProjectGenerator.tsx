@@ -153,7 +153,7 @@ Here is a sample response: {
 User Input: "${input}"`, // Change the response format to an array of projects
                     },
                 ],
-                model: "llama3-8b-8192", // Ensure this is the correct model for your use case
+                model: "meta-llama/llama-4-scout-17b-16e-instruct", // Ensure this is the correct model for your use case
                 temperature: 1,
                 max_tokens: 1024,
                 top_p: 1,

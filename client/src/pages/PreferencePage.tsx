@@ -85,7 +85,7 @@ say you are giving a json formatted response just give the json file. Do not rep
   Here is the submission" "${input}".`,
                     },
                 ],
-                model: "llama3-8b-8192",
+                model: "meta-llama/llama-4-scout-17b-16e-instruct",
                 temperature: 0.05,
                 max_tokens: 1024,
                 top_p: 1,

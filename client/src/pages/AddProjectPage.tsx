@@ -133,7 +133,7 @@ const AddProject: React.FC = () => {
                         Here is the submission: "${description}".`,
                     },
                 ],
-                model: "llama3-8b-8192",
+                model: "meta-llama/llama-4-scout-17b-16e-instruct",
                 temperature: 0.2,
                 max_tokens: 150,
                 top_p: 1,

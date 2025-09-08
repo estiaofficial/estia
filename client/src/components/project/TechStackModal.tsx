@@ -101,7 +101,7 @@ Here is the input
 "${tech}".`,
                         },
                     ],
-                    model: "llama3-8b-8192",
+                    model: "meta-llama/llama-4-scout-17b-16e-instruct",
                     temperature: 0.5,
                     max_tokens: 1024,
                     top_p: 1,
